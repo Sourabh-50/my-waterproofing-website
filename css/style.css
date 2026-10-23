@@ -214,8 +214,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-desc.desc-white {
-  color: #94a3b8;
+  color: #cbd5e1;
 }
+
+.section-desc.desc-white strong {
+  color: #ffffff;
+}
+
 
 /* --------------------------------------------------------------------------
    4. BUTTONS & INTERACTIVE ELEMENTS
@@ -1865,6 +1870,70 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
+
+/* Horizontal Rotating Reviews Stripe (Auto-scrolling Marquee) */
+.reviews-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 16px 0 24px;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.reviews-marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollReviewsMarquee 50s linear infinite;
+  will-change: transform;
+}
+
+.reviews-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.reviews-marquee-track .review-card {
+  width: 380px;
+  min-width: 380px;
+  max-width: 380px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  border: 1px solid var(--border-light);
+  user-select: none;
+  cursor: grab;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.reviews-marquee-track .review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+@keyframes scrollReviewsMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-marquee-track .review-card {
+    width: 295px;
+    min-width: 295px;
+    max-width: 295px;
+    padding: 22px 18px;
+  }
+  .reviews-marquee-track {
+    animation-duration: 38s;
+  }
+}
+
 
 .review-card {
   background: white;
