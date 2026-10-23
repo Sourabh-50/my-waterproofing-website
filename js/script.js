@@ -546,15 +546,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const nameInput = form.querySelector('[name="name"]');
       const phoneInput = form.querySelector('[name="phone"]');
       const emailInput = form.querySelector('[name="email"]');
-      const serviceInput = form.querySelector('[name="service"]');
-      const locationInput = form.querySelector('[name="location"]');
-      const descInput = form.querySelector('[name="description"]');
+      const serviceInput = form.querySelector('[name="service"]') || form.querySelector('[name="issue"]');
+      const locationInput = form.querySelector('[name="location"]') || form.querySelector('[name="area"]');
+      const descInput = form.querySelector('[name="description"]') || form.querySelector('[name="notes"]');
       const submitBtn = form.querySelector('button[type="submit"]');
 
       let isValid = true;
 
       // Validate Name
-      if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+      if (!nameInput || !nameInput.value.trim() || nameInput.value.trim().length < 2) {
         showFieldError(nameInput, 'Please enter your full name (at least 2 characters).');
         isValid = false;
       } else {
@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Validate Indian Phone Number
-      const phoneClean = phoneInput.value.replace(/\D/g, '');
+      const phoneClean = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
       if (!phoneClean || !/^[6-9]\d{9}$/.test(phoneClean)) {
         showFieldError(phoneInput, 'Please enter a valid 10-digit Indian mobile number (starting with 6, 7, 8, or 9).');
         isValid = false;
@@ -582,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Validate Service
-      if (!serviceInput.value) {
+      if (!serviceInput || !serviceInput.value) {
         showFieldError(serviceInput, 'Please select the required waterproofing service.');
         isValid = false;
       } else {
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // Validate Location
-      if (!locationInput.value.trim() || locationInput.value.trim().length < 3) {
+      if (!locationInput || !locationInput.value.trim() || locationInput.value.trim().length < 3) {
         showFieldError(locationInput, 'Please provide your Pune locality / society name.');
         isValid = false;
       } else {
@@ -599,51 +599,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!isValid) return;
 
-      // Show Loading State on button
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" class="spin-icon" style="animation: spin 1s linear infinite;">
-          <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.3)"/>
-          <path d="M12 2a10 10 0 0 1 10 10" stroke="#ffffff"/>
-        </svg>
-        Confirming Inspection...
-      `;
-
-      // Format WhatsApp fallback message without emoji artifacts
+      // Format WhatsApp message with customer inspection details
       const waMsg = encodeURIComponent(
         `*NEW INSPECTION ENQUIRY - MY Waterproofing*\n\n` +
         `*Name:* ${nameInput.value.trim()}\n` +
         `*Phone:* ${phoneInput.value.trim()}\n` +
         `*Location:* ${locationInput.value.trim()}\n` +
         `*Service:* ${serviceInput.value}\n` +
-        `*Problem Details:* ${descInput ? descInput.value.trim() || 'Needs site inspection' : 'Needs site inspection'}\n\n` +
+        (emailInput && emailInput.value.trim() ? `*Email:* ${emailInput.value.trim()}\n` : '') +
+        `*Problem Details:* ${descInput && descInput.value.trim() ? descInput.value.trim() : 'Site inspection requested'}\n\n` +
         `Please confirm available inspection slot in Pune.`
       );
 
-      // Simulate instantaneous processing & provide direct WhatsApp link
+      const waUrl = `https://wa.me/919822278989?text=${waMsg}`;
+
+      // Update button state
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:6px;" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg>
+        Opening WhatsApp...
+      `;
+
+      // Direct WhatsApp dispatch: opens directly without delay or popup blocker restriction
+      const newWin = window.open(waUrl, '_blank');
+      if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+
+      // Display immediate direct feedback
+      if (alertBox) {
+        alertBox.className = 'form-status-alert success';
+        alertBox.innerHTML = `
+          <div>
+            <strong>✓ Opening WhatsApp...</strong><br>
+            Connecting your enquiry directly to +91 9822278989. If WhatsApp did not open automatically, <a href="${waUrl}" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline; font-weight: 700;">tap here to open WhatsApp</a>.
+          </div>
+        `;
+        alertBox.style.display = 'flex';
+      }
+
+      // Reset form and button after brief interval
       setTimeout(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
-
-        if (alertBox) {
-          alertBox.className = 'form-status-alert success';
-          alertBox.innerHTML = `
-            <div>
-              <strong>✓ Inspection Request Registered!</strong><br>
-              Thank you, ${nameInput.value.trim()}. Our Pune specialist is reviewing your location. You can also connect directly:
-              <div style="margin-top: 8px;">
-                <a href="https://wa.me/919822278989?text=${waMsg}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">
-                  ⚡ Open in WhatsApp with These Details
-                </a>
-              </div>
-            </div>
-          `;
-          alertBox.style.display = 'flex';
-        }
-
         form.reset();
-      }, 1200);
+      }, 2500);
     });
 
     // Real-time error dismissal
