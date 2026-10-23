@@ -81,7 +81,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  color-scheme: light;
+  color-scheme: dark;
+  background-color: #000000;
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
@@ -89,7 +90,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-white);
+  background-color: #000000;
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -325,16 +326,19 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.76);
+  background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
   transition: all var(--transition-smooth);
 }
 
 .site-header.scrolled {
-  background: rgba(4, 5, 8, 0.94);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85);
   border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
