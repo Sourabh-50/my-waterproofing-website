@@ -164,7 +164,7 @@ The website is engineered for static hosting on **AWS S3 + CloudFront**:
 - **Head Office**: Pune, Maharashtra - 411028 (Serving All Pune & PCMC Localities)
 - **Direct Phone**: [+91 9822278989](tel:+919822278989)
 - **WhatsApp Support**: [+91 9822278989](https://wa.me/919822278989)
-- **Email**: [myconstructiona@gmail.com](mailto:myconstructiona@gmail.com)
+- **Email**: [info@mywaterproofing.in](mailto:info@mywaterproofing.in)
 - **Operating Hours**: Monday – Sunday: 8:00 AM – 8:30 PM
 
 ---
