@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   gap: 16px;
 }
 
@@ -624,8 +624,8 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-nav-drawer {
     max-width: 100%;
     border-left: none;
-    top: 70px;
-    height: calc(100vh - 70px);
+    top: 62px;
+    height: calc(100vh - 62px);
     padding: 12px 16px 16px;
   }
 }
@@ -714,9 +714,18 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
   position: relative;
   background: radial-gradient(circle at 80% 20%, #151310 0%, #050608 70%);
-  padding: clamp(60px, 8vw, 110px) 0 clamp(60px, 8vw, 90px);
+  padding: clamp(22px, 3.5vw, 48px) 0 clamp(44px, 6vw, 76px);
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.page-hero-banner {
+  position: relative;
+  background: radial-gradient(circle at 80% 20%, #151310 0%, #050608 70%);
+  padding: clamp(22px, 3vw, 44px) 0 clamp(30px, 4vw, 46px);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
 }
 
 .hero-bg-overlay {
@@ -756,7 +765,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .hero-eyebrow-dot {
@@ -2738,8 +2747,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header-inner {
-    height: 72px;
+    height: 62px;
     gap: 8px;
+  }
+
+  .hero-section {
+    padding-top: 14px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .page-hero-banner {
+    padding-top: 14px !important;
+    padding-bottom: 28px !important;
   }
 
   .brand-logo-img {
@@ -2790,10 +2809,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .hero-eyebrow {
     font-size: 0.78rem;
-    padding: 6px 12px;
+    padding: 5px 12px;
     max-width: 100%;
     white-space: normal;
     text-align: center;
+    margin-bottom: 12px !important;
   }
 
   .stats-grid {
