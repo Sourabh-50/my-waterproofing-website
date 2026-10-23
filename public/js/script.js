@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Active water dripping during monsoon downpours in Pune',
       ],
       solution: 'Crack filling & coating with waterproofing compound engineered to protect terraces and roofs from rainwater seepage.',
-      image: 'images/service-terrace.jpg',
+      image: 'images/real-projects/real-site-terrace-crack-filling-grid.webp',
       serviceOption: 'Terrace & Roof Waterproofing',
     },
     bathroom: {
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Persistent foul musty odour and black mould growth in grout crevices',
       ],
       solution: 'Pressure injection grouting with waterproofing compound directly into concrete voids, elastomeric joint sealing around drain traps—100% no tile breaking required.',
-      image: 'images/service-bathroom.jpg',
+      image: 'images/real-projects/real-site-bathroom-after-waterproofing.webp',
       serviceOption: 'Specialist Pressure Injection Grouting for Bathroom, Toilet & Balcony Leakage',
     },
     balcony: {
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Hairline cracks extending along the perimeter parapet wall',
       ],
       solution: 'Pressure injection grouting with waterproofing compound combined with crack filling & protective coating.',
-      image: 'images/service-kitchen-balcony.jpg',
+      image: 'images/real-projects/real-site-balcony-pressure-injection-ports.webp',
       serviceOption: 'Balcony Leakage Treatment',
     },
     walls: {
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Algae accumulation and leakage visible through exterior tank walls',
       ],
       solution: 'Crack filling & coating with waterproofing compound and pressure injection grouting.',
-      image: 'images/service-water-tank.jpg',
+      image: 'images/real-projects/real-site-water-tank-internal-coating.webp',
       serviceOption: 'Overhead Water Tank Waterproofing',
     },
   };
