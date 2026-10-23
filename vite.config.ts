@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         about: resolve(import.meta.dirname, 'about.html'),
         gallery: resolve(import.meta.dirname, 'gallery.html'),
+        notFound: resolve(import.meta.dirname, '404.html'),
       },
     },
   },
