@@ -7,12 +7,12 @@
    1. CSS VARIABLES & DESIGN TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Brand Palette - Executive Obsidian & Titanium Slate */
-  --primary-navy: #0b0f19;
-  --navy-dark: #06090e;
-  --navy-surface: #111726;
-  --navy-card: #172033;
-  --navy-border: rgba(255, 255, 255, 0.09);
+  /* Brand Palette - Deep Obsidian & Pure Titanium Charcoal (No Blue-Black Clashes) */
+  --primary-navy: #050608;
+  --navy-dark: #000000;
+  --navy-surface: #0a0c10;
+  --navy-card: #11141a;
+  --navy-border: rgba(255, 255, 255, 0.08);
 
   /* Primary Accent - Warm Amber Gold & Burnished Copper */
   --water-blue: #f59e0b;
@@ -325,17 +325,17 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(6, 21, 38, 0.96);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: all var(--transition-smooth);
 }
 
 .site-header.scrolled {
-  background: rgba(3, 11, 20, 0.98);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  border-bottom-color: rgba(14, 165, 233, 0.15);
+  background: rgba(4, 5, 8, 0.94);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
 .header-inner {
@@ -462,24 +462,42 @@ h1, h2, h3, h4, h5, h6 {
 .header-call-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  height: 40px;
+  padding: 0 16px;
   color: #e2e8f0;
-  font-size: 0.88rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
   font-weight: 700;
-  padding: 9px 15px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   white-space: nowrap;
   flex-shrink: 0;
   text-decoration: none;
+  line-height: 1;
   transition: all var(--transition-fast);
 }
 
 .header-call-btn:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: var(--water-light);
+  border-color: rgba(255, 255, 255, 0.25);
   color: white;
+}
+
+.header-actions .btn {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .desktop-only {
@@ -607,7 +625,7 @@ h1, h2, h3, h4, h5, h6 {
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  background: radial-gradient(circle at 80% 20%, #1e1b18 0%, var(--primary-navy) 70%);
+  background: radial-gradient(circle at 80% 20%, #151310 0%, #050608 70%);
   padding: clamp(60px, 8vw, 110px) 0 clamp(60px, 8vw, 90px);
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -2653,13 +2671,58 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-columns: 1fr;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .coverage-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .coverage-title-box {
+    max-width: 100%;
+  }
+
+  .locality-chips-wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 10px;
+    width: 100%;
+  }
+
+  .locality-chip {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 7px 11px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Mobile Footer: Core Services & Quick Links in 2 clean columns; Brand and Address in original full-width form */
+  .footer-top-grid, .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 16px !important;
+  }
+
+  .footer-top-grid > div:first-child,
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  .footer-top-grid > div:nth-child(2),
+  .footer-grid > div:nth-child(2) {
+    grid-column: 1 / 2 !important;
+  }
+
+  .footer-top-grid > div:nth-child(3),
+  .footer-grid > div:nth-child(3) {
+    grid-column: 2 / 3 !important;
+  }
+
+  .footer-top-grid > div:nth-child(4),
+  .footer-grid > div:nth-child(4) {
+    grid-column: 1 / -1 !important;
   }
 
   .footer-bottom-bar {

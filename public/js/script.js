@@ -322,9 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (selectedArea.includes('Balcony') || selectedArea.includes('Kitchen')) {
       approach = 'Non-Destructive Pressure Injection Grouting & Crack Filling with Waterproofing Compound';
       duration = '1 Day';
-    } else if (selectedArea.includes('Basement')) {
-      approach = 'Negative-Side Non-Destructive Pressure Injection Grouting & Crystalline Sealing';
-      duration = '2 - 4 Days';
     } else if (selectedArea.includes('Pool')) {
       approach = 'Swimming Pool Hydrostatic Pressure Injection Grouting & Elastomeric Coating';
       duration = '3 - 5 Days';
