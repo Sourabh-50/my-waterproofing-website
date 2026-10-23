@@ -1,0 +1,71 @@
+name: Build and Deploy to AWS S3 & CloudFront
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Permissions required for AWS OIDC authentication
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies (clean install)
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build
+
+      # Configure AWS Credentials via OIDC (Role Assumption - No long-lived access keys)
+      # Requires GitHub Secret: AWS_ROLE_TO_ASSUME and AWS_REGION
+      - name: Configure AWS Credentials (OIDC)
+        if: ${{ env.AWS_ROLE_TO_ASSUME != '' }}
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ secrets.AWS_REGION || 'ap-south-1' }}
+          role-session-name: GitHubActions-DeployMyWaterproofing
+        env:
+          AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+
+      # Sync built static files (dist/) to S3 Bucket
+      - name: Deploy to S3
+        if: ${{ env.S3_BUCKET_NAME != '' }}
+        run: |
+          # 1. Upload hashed assets with immutable long-term caching (1 year)
+          aws s3 sync dist/assets s3://${{ secrets.S3_BUCKET_NAME }}/assets \
+            --cache-control "public, max-age=31536000, immutable" \
+            --delete
+
+          # 2. Upload remaining static root files (HTML, robots, sitemap, og-image) with revalidation
+          aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }}/ \
+            --exclude "assets/*" \
+            --cache-control "public, max-age=0, must-revalidate"
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+
+      # Invalidate CloudFront Distribution Cache to immediately serve latest updates
+      - name: Invalidate CloudFront Cache
+        if: ${{ env.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}

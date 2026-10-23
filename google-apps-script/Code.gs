@@ -36,7 +36,7 @@
 const SPREADSHEET_ID = 'PASTE_YOUR_SPREADSHEET_ID_HERE';
 
 /** The email address that should receive new enquiry notifications */
-const BUSINESS_EMAIL = 'PASTE_BUSINESS_EMAIL_HERE';
+const BUSINESS_EMAIL = 'info@mywaterproofing.in';
 
 /** The name displayed in outgoing emails */
 const BUSINESS_NAME = 'MY Waterproofing';
