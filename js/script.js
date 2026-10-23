@@ -376,10 +376,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (estWhatsAppBtn) {
       const msg = encodeURIComponent(
-        `Hello MY Waterproofing! I used your online estimator for my ${selectedProperty} in Pune.\n` +
-        `• Area: ${selectedArea}\n` +
-        `• Size: ${selectedSize}\n` +
-        `• Recommended: ${approach}\n` +
+        `Hello MY Waterproofing! I used your online estimator for my ${selectedProperty} in Pune.\n\n` +
+        `- Area: ${selectedArea}\n` +
+        `- Size: ${selectedSize}\n` +
+        `- Recommended: ${approach}\n\n` +
         `Please arrange a site inspection for me.`
       );
       estWhatsAppBtn.href = `https://wa.me/919822278989?text=${msg}`;
@@ -610,14 +610,14 @@ document.addEventListener('DOMContentLoaded', () => {
         Confirming Inspection...
       `;
 
-      // Format WhatsApp fallback message
+      // Format WhatsApp fallback message without emoji artifacts
       const waMsg = encodeURIComponent(
         `*NEW INSPECTION ENQUIRY - MY Waterproofing*\n\n` +
-        `👤 *Name:* ${nameInput.value.trim()}\n` +
-        `📞 *Phone:* ${phoneInput.value.trim()}\n` +
-        `📍 *Location:* ${locationInput.value.trim()}\n` +
-        `🛠️ *Service:* ${serviceInput.value}\n` +
-        `📝 *Problem Details:* ${descInput ? descInput.value.trim() || 'Needs site inspection' : 'Needs site inspection'}\n\n` +
+        `*Name:* ${nameInput.value.trim()}\n` +
+        `*Phone:* ${phoneInput.value.trim()}\n` +
+        `*Location:* ${locationInput.value.trim()}\n` +
+        `*Service:* ${serviceInput.value}\n` +
+        `*Problem Details:* ${descInput ? descInput.value.trim() || 'Needs site inspection' : 'Needs site inspection'}\n\n` +
         `Please confirm available inspection slot in Pune.`
       );
 

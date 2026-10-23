@@ -27,3 +27,7 @@ npm-debug.log*
 
 # Scratch & temporary scripts
 scratch/
+
+# Original heavy uncompressed raw photos & videos (keep local only, do not upload to git/S3)
+original-raw-media/
+
