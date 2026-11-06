@@ -64,9 +64,10 @@
 ## 🛡️ Authenticity & Quality Standards
 
 1. **Removed Fake Metrics**: Eliminated invented claims like "Since 2010", "1,500+ projects", and "4.9 ★ rating".
-2. **Strict Pune Geolocation**: Mention strictly Pune, Maharashtra, India without unverified street addresses or specific localities.
-3. **Preserved Verified Contact Data**: Retained approved official phone/WhatsApp (+91 9822278989) and official business email (`info@mywaterproofing.in`).
-4. **Scope Integrity**: Completely removed out-of-scope services (zero basement mentions) and aligned all 6 service specializations with authentic capabilities.
+2. **Replaced Fake Reviews Marquee**: Replaced synthetic ratings with genuine Pune society case verifications, highlighting verified diagnostic procedures, specialized non-destructive treatment methods, and real on-site engineering results.
+3. **Strict Pune Geolocation**: Mention strictly Pune, Maharashtra, India without unverified street addresses or specific localities.
+4. **Preserved Verified Contact Data**: Retained approved official phone/WhatsApp (+91 9822278989) and official business emails (`info@mywaterproofing.in` and `santoshbelgaonkar@mywaterproofing.in`).
+5. **Scope Integrity**: Completely removed out-of-scope services (zero basement mentions) and aligned all 6 service specializations with authentic capabilities.
 
 ---
 

@@ -824,18 +824,448 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="dark"] .section-title {
-  color: #f8fafc;
+  color: #f8fafc !important;
 }
 
 [data-theme="dark"] .section-desc {
-  color: #94a3b8;
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .text-brand-blue,
+[data-theme="dark"] .text-gradient,
+[data-theme="dark"] .text-orange-gradient {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .services-section {
+  background: #090d16 !important;
 }
 
 [data-theme="dark"] .service-card,
 [data-theme="dark"] .stat-card,
 [data-theme="dark"] .faq-card {
-  background: #111827;
-  border-color: rgba(255, 255, 255, 0.08);
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .service-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .service-desc {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .diagnosis-section {
+  background: #0b0f19 !important;
+}
+
+[data-theme="dark"] .diagnosis-display-box {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .diag-badge {
+  color: var(--brand-cyan, #3ec2d3) !important;
+  background: rgba(62, 194, 211, 0.12) !important;
+  border-color: rgba(62, 194, 211, 0.3) !important;
+}
+
+[data-theme="dark"] .diag-problem-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .diag-description {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .diag-warning-heading {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .diag-detail-item {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .diag-detail-item svg {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .diag-solution-callout {
+  background: rgba(62, 194, 211, 0.08) !important;
+  border-color: rgba(62, 194, 211, 0.25) !important;
+  border-left-color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .diag-solution-heading {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .diag-solution-text {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .repairs-section {
+  background: #090d16 !important;
+}
+
+[data-theme="dark"] .repair-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .repair-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .repair-desc {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .why-choose-section {
+  background: #0b0f19 !important;
+}
+
+[data-theme="dark"] .why-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .why-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .why-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .why-icon-box {
+  background: rgba(62, 194, 211, 0.12) !important;
+  color: var(--brand-cyan, #3ec2d3) !important;
+  border-color: rgba(62, 194, 211, 0.3) !important;
+}
+
+[data-theme="dark"] .mission-callout-card {
+  background: rgba(17, 24, 39, 0.85) !important;
+  border-color: rgba(62, 194, 211, 0.3) !important;
+}
+
+[data-theme="dark"] .mission-quote {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .coverage-section {
+  background: #090d16 !important;
+}
+
+[data-theme="dark"] .coverage-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .coverage-sub {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .locality-chip {
+  background: rgba(20, 78, 115, 0.25) !important;
+  border-color: rgba(62, 194, 211, 0.3) !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .locality-chip svg {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .locality-chip:hover {
+  background: rgba(20, 78, 115, 0.45) !important;
+  border-color: var(--brand-cyan, #3ec2d3) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px rgba(62, 194, 211, 0.35) !important;
+}
+
+[data-theme="dark"] .faq-section {
+  background: #0b0f19 !important;
+}
+
+[data-theme="dark"] .faq-question-btn {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .faq-answer p {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .contact-section {
+  background: #090d16 !important;
+}
+
+[data-theme="dark"] .contact-form-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .form-label {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .review-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .review-card:hover {
+  border-color: var(--brand-cyan, #3ec2d3) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .reviewer-name {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .review-text {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .review-service-badge,
+[data-theme="dark"] .review-case-badge {
+  background: rgba(62, 194, 211, 0.12) !important;
+  color: var(--brand-cyan, #3ec2d3) !important;
+  border-color: rgba(62, 194, 211, 0.3) !important;
+}
+
+[data-theme="dark"] .reviewer-avatar {
+  background: rgba(62, 194, 211, 0.15) !important;
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .reviewer-loc {
+  color: #94a3b8 !important;
+}
+
+/* Explicit Light Mode Rules - Guaranteed 0 Invisible Text */
+[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .section-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .section-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .text-brand-blue,
+[data-theme="light"] .text-gradient,
+[data-theme="light"] .text-orange-gradient {
+  color: var(--brand-blue, #144e73) !important;
+}
+
+[data-theme="light"] .services-section {
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .service-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .service-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .service-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .diagnosis-section {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] .diagnosis-display-box {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+[data-theme="light"] .diag-badge {
+  color: var(--brand-blue, #144e73) !important;
+  background: rgba(20, 78, 115, 0.08) !important;
+  border-color: rgba(20, 78, 115, 0.2) !important;
+}
+
+[data-theme="light"] .diag-problem-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .diag-description {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .diag-warning-heading {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .diag-detail-item {
+  color: #1e293b !important;
+}
+
+[data-theme="light"] .diag-detail-item svg {
+  color: var(--brand-blue, #144e73) !important;
+}
+
+[data-theme="light"] .diag-solution-callout {
+  background: rgba(20, 78, 115, 0.06) !important;
+  border: 1px solid rgba(20, 78, 115, 0.2) !important;
+  border-left: 4px solid var(--brand-blue, #144e73) !important;
+}
+
+[data-theme="light"] .diag-solution-heading {
+  color: var(--brand-blue, #144e73) !important;
+}
+
+[data-theme="light"] .diag-solution-text {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .why-choose-section {
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .why-card {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .why-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .why-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .why-icon-box {
+  background: rgba(20, 78, 115, 0.08) !important;
+  color: var(--brand-blue, #144e73) !important;
+  border-color: rgba(20, 78, 115, 0.2) !important;
+}
+
+[data-theme="light"] .coverage-section {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] .coverage-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .coverage-sub {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .locality-chip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .locality-chip svg {
+  color: var(--brand-blue, #144e73) !important;
+}
+
+[data-theme="light"] .locality-chip:hover {
+  background: #f1f5f9 !important;
+  border-color: var(--brand-blue, #144e73) !important;
+  color: var(--brand-blue, #144e73) !important;
+  box-shadow: 0 2px 8px rgba(20, 78, 115, 0.15) !important;
+}
+
+[data-theme="light"] .repairs-section {
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .repair-card {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .repair-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .repair-desc {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .faq-section {
+  background: #f8fafc !important;
+}
+
+[data-theme="light"] .faq-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .faq-question-btn {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .faq-answer p {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .contact-section {
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .contact-form-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+[data-theme="light"] .form-label {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea {
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .review-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .reviewer-name {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .review-text {
+  color: #334155 !important;
+}
+
+[data-theme="light"] .review-service-badge {
+  background: rgba(20, 78, 115, 0.08) !important;
+  color: var(--brand-blue, #144e73) !important;
+  border-color: rgba(20, 78, 115, 0.2) !important;
 }
 
 [data-theme="dark"] .page-hero-banner {
@@ -1057,12 +1487,10 @@ body.menu-open {
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 85% 15%, rgba(14, 165, 233, 0.07) 0%, transparent 45%),
-    radial-gradient(circle at 10% 80%, rgba(2, 132, 199, 0.05) 0%, transparent 45%),
-    radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
-  background-size: 100% 100%, 100% 100%, 32px 32px;
-  opacity: 0.8;
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(20, 78, 115, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(62, 194, 211, 0.08) 0%, transparent 60%);
+  opacity: 0.95;
   pointer-events: none;
 }
 
@@ -1672,11 +2100,19 @@ body.menu-open {
   margin-bottom: 24px;
 }
 
+.diag-warning-heading {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark, #0f172a);
+}
+
 .diag-details-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .diag-detail-item {
@@ -1684,13 +2120,41 @@ body.menu-open {
   align-items: flex-start;
   gap: 12px;
   font-size: 0.925rem;
-  color: var(--text-dark);
+  color: var(--text-dark, #0f172a);
+  line-height: 1.5;
 }
 
 .diag-detail-item svg {
-  color: var(--water-blue);
+  color: var(--brand-blue, #144e73);
   flex-shrink: 0;
   margin-top: 3px;
+}
+
+.diag-solution-callout {
+  background: rgba(20, 78, 115, 0.06);
+  border: 1px solid rgba(20, 78, 115, 0.2);
+  border-left: 4px solid var(--brand-blue, #144e73);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  transition: all var(--transition-fast);
+}
+
+.diag-solution-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--brand-blue, #144e73);
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+}
+
+.diag-solution-text {
+  font-size: 0.925rem;
+  color: var(--text-dark, #0f172a);
+  line-height: 1.55;
+  display: block;
 }
 
 .diag-action-row {
@@ -2392,7 +2856,77 @@ body.menu-open {
 .reviews-marquee-track .review-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
-  border-color: rgba(245, 158, 11, 0.45);
+  border-color: var(--brand-cyan, #3ec2d3);
+}
+
+.review-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-case-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--brand-blue, #144e73);
+  background: rgba(20, 78, 115, 0.08);
+  border: 1px solid rgba(20, 78, 115, 0.2);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.review-case-badge .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-cyan, #3ec2d3);
+}
+
+.review-text {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #334155;
+  margin-bottom: 18px;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(20, 78, 115, 0.1);
+  color: var(--brand-blue, #144e73);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
+.reviewer-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.reviewer-loc {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
 }
 
 @keyframes scrollReviewsMarquee {
