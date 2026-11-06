@@ -3,11 +3,10 @@
   <img src="images/logo.png" alt="MY Waterproofing Pune Logo" width="180" />
 
   # MY Waterproofing Pune
-  ### Leakage Solution Specialist • Serving Pune & PCMC Since 2010
+  ### Waterproofing Specialist | Leakage Repair Experts • Pune, Maharashtra
 
-  [![Website Status](https://img.shields.io/badge/Status-Live%20Production-success?style=for-the-badge&logo=vercel)](https://github.com/Sourabh-50/my-waterproofing-website)
-  [![Rating](https://img.shields.io/badge/Google%20Rating-4.9%20★-f59e0b?style=for-the-badge&logo=google)](https://github.com/Sourabh-50/my-waterproofing-website)
-  [![Projects](https://img.shields.io/badge/Projects-2%2C500%2B%20Completed-38bdf8?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
+  [![Website Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
+  [![Location](https://img.shields.io/badge/Location-Pune%2C%20Maharashtra-144e73?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
   [![Vite](https://img.shields.io/badge/Bundler-Vite%208-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 
   <p align="center">
