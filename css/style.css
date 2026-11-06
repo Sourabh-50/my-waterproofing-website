@@ -4109,4 +4109,148 @@ body.menu-open {
   }
 }
 
+/* ==========================================================================
+   WHY CHOOSE US, OUR MISSION & AUTHENTICITY COMMITMENTS
+   High-contrast, responsive card grid supporting Dark & Light themes
+   ========================================================================== */
+.why-choose-section {
+  padding: 80px 0;
+  position: relative;
+}
+
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.why-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light, #e2e8f0);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-fast, 0.25s ease), border-color var(--transition-fast, 0.25s ease), box-shadow var(--transition-fast, 0.25s ease);
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-cyan, #3ec2d3);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.12), 0 0 16px rgba(62, 194, 211, 0.16);
+}
+
+.why-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(20, 78, 115, 0.08);
+  color: var(--brand-blue, #144e73);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+  transition: background var(--transition-fast, 0.2s ease), color var(--transition-fast, 0.2s ease);
+}
+
+.why-card:hover .why-icon-box {
+  background: var(--brand-cyan, #3ec2d3);
+  color: #0a0c10;
+}
+
+.why-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.why-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Mission Callout Card */
+.mission-callout-card {
+  margin-top: 48px;
+  background: rgba(20, 78, 115, 0.06);
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--brand-blue, #144e73);
+  border-radius: 12px;
+  padding: 24px 30px;
+}
+
+.mission-callout-card .mission-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-blue, #144e73);
+  margin-bottom: 8px;
+}
+
+.mission-callout-card .mission-quote {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #0f172a;
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Dark Theme Overrides for Why Choose & Mission */
+[data-theme="dark"] .why-choose-section {
+  background-color: transparent;
+}
+
+[data-theme="dark"] .why-card {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-theme="dark"] .why-card:hover {
+  border-color: var(--brand-cyan, #3ec2d3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(62, 194, 211, 0.22) !important;
+}
+
+[data-theme="dark"] .why-icon-box {
+  background: rgba(62, 194, 211, 0.12) !important;
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .why-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .why-desc {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .mission-callout-card {
+  background: rgba(17, 24, 39, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 4px solid var(--brand-cyan, #3ec2d3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .mission-callout-card .mission-tag {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+[data-theme="dark"] .mission-callout-card .mission-quote {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .text-brand-blue {
+  color: var(--brand-cyan, #3ec2d3) !important;
+}
+
 

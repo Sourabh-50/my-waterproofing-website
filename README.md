@@ -43,7 +43,7 @@
 
 - **Multi-Page Static Architecture**:
   - `index.html` — Homepage featuring instant interactive diagnosis, before/after interactive image comparison slider, cost & timeline estimator, Pune customer reviews marquee stripe, and inspection booking modal.
-  - `about.html` — Company legacy, core milestones (2010–present), technical methodology, non-destructive philosophy, and certified engineer team.
+  - `about.html` — Company profile, core value pillars, technical methodology, non-destructive philosophy, and certified specialist team.
   - `gallery.html` — Real-world photographic case studies across Pune & PCMC societies (Amanora, Baner, Kothrud, Kharadi, Wakad, Viman Nagar).
   - `404.html` — Witty waterproofing-themed error page with custom animated dripping valve pipe and instant redirect to safety.
 - **Glassmorphic Dark Obsidian Design System**:
@@ -58,6 +58,15 @@
   - Google-indexed semantic HTML5 markup with OpenGraph, Twitter Cards, and schema.org microdata.
   - Valid `sitemap.xml` and `robots.txt` configuration.
   - Multi-resolution square favicon suite (`16x16`, `32x32`, `48x48`, `64x64`, `180x180`, `192x192`).
+
+---
+
+## 🛡️ Authenticity & Quality Standards
+
+1. **Removed Fake Metrics**: Eliminated invented claims like "Since 2010", "1,500+ projects", and "4.9 ★ rating".
+2. **Strict Pune Geolocation**: Mention strictly Pune, Maharashtra, India without unverified street addresses or specific localities.
+3. **Preserved Verified Contact Data**: Retained approved official phone/WhatsApp (+91 9822278989) and official business email (`info@mywaterproofing.in`).
+4. **Scope Integrity**: Completely removed out-of-scope services (zero basement mentions) and aligned all 6 service specializations with authentic capabilities.
 
 ---
 
