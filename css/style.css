@@ -1124,18 +1124,42 @@ h1, h2, h3, h4, h5, h6 {
   color: #0f172a !important;
 }
 
-[data-theme="light"] .section-title {
+[data-theme="light"] .section-title:not(.title-white):not([class*="white"]) {
   color: #0f172a !important;
 }
 
-[data-theme="light"] .section-desc {
+[data-theme="light"] .section-desc:not(.desc-white):not([class*="white"]) {
   color: #475569 !important;
 }
 
 [data-theme="light"] .text-brand-blue,
-[data-theme="light"] .text-gradient,
 [data-theme="light"] .text-orange-gradient {
   color: var(--brand-blue, #144e73) !important;
+}
+
+/* Ensure any dark section (e.g. Geographic Coverage, Call-to-Action, Comparison) is ALWAYS razor sharp pure white */
+.title-white,
+[data-theme="light"] .title-white,
+section[style*="navy-surface"] .section-title,
+[data-theme="light"] section[style*="navy-surface"] .section-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.desc-white,
+[data-theme="light"] .desc-white,
+section[style*="navy-surface"] .section-desc,
+[data-theme="light"] section[style*="navy-surface"] .section-desc {
+  color: #e2e8f0 !important;
+}
+
+section[style*="navy-surface"] .text-gradient,
+[data-theme="light"] section[style*="navy-surface"] .text-gradient,
+.title-white .text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #3ec2d3 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #38bdf8 !important;
 }
 
 /* Comparison Section Dark Navy Exception: High-Contrast White and Cyan */
@@ -3651,35 +3675,34 @@ body.menu-open {
   border: 2px solid white;
 }
 
-/* Back to Top */
-.back-to-top-btn {
+/* Floating Instagram Action Button (Matches WhatsApp floating action style) */
+.floating-instagram-btn {
   position: fixed;
-  bottom: 100px;
-  right: 32px;
-  width: 44px;
-  height: 44px;
+  bottom: 96px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: var(--navy-surface);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-  z-index: 989;
-  opacity: 0;
-  visibility: hidden;
+  box-shadow: 0 10px 28px rgba(220, 39, 67, 0.4);
+  border: 2px solid #ffffff;
+  z-index: 990;
   transition: all var(--transition-smooth);
+  text-decoration: none;
 }
 
-.back-to-top-btn.visible {
-  opacity: 1;
-  visibility: visible;
+.floating-instagram-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 14px 34px rgba(220, 39, 67, 0.6);
+  color: #ffffff;
 }
 
-.back-to-top-btn:hover {
-  background: var(--water-blue);
-  transform: translateY(-3px);
+.back-to-top-btn {
+  display: none !important;
 }
 
 /* Mobile Sticky Bottom Action Bar */
@@ -3942,9 +3965,11 @@ body.menu-open {
     height: 56px !important;
   }
 
-  .back-to-top-btn {
-    bottom: 92px !important;
-    right: 20px !important;
+  .floating-instagram-btn {
+    bottom: 86px !important;
+    right: 18px !important;
+    width: 52px !important;
+    height: 52px !important;
   }
 
   .badge-top-right, .badge-bottom-left {

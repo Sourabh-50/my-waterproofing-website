@@ -3,6 +3,12 @@
  * Fully interactive, glitch-free logic for Mobile, Tablet & Desktop
  */
 
+// Strict Single Theme Mode: Force Pure Clean Light Mode across all pages immediately
+try {
+  localStorage.removeItem('mywaterproofing_theme');
+} catch (e) {}
+document.documentElement.setAttribute('data-theme', 'light');
+
 document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------------------
   // 1. CENTERED MOBILE NAVIGATION POPUP & STRICT SCROLL LOCK
@@ -145,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. STICKY HEADER & SCROLL BEHAVIOR
   // -------------------------------------------------------------------------
   const siteHeader = document.querySelector('.site-header');
-  const backToTopBtn = document.getElementById('backToTopBtn');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -158,22 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         siteHeader.classList.remove('scrolled');
       }
     }
-
-    // Back to top button visibility
-    if (backToTopBtn) {
-      if (scrollY > 500) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }
   }, { passive: true });
-
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 
   // Handle all Back to Top links smoothly
   document.querySelectorAll('a[href="#top"], .back-to-top-link').forEach(link => {
