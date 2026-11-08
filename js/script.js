@@ -763,41 +763,12 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFormHandling('modalBookingForm', 'modalFormAlert');
 
   // -------------------------------------------------------------------------
-  // 11. DUAL THEME MODE (DARK / LIGHT) SWITCHER
+  // 11. PERMANENT CLEAN LIGHT MODE (PURE LIGHT THEME)
   // -------------------------------------------------------------------------
-  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  const storedTheme = localStorage.getItem('mywaterproofing_theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-  function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('mywaterproofing_theme', theme);
-    themeToggleBtns.forEach((btn) => {
-      btn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-      btn.setAttribute('title', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-    });
-  }
-
-  // Initialize theme
-  applyTheme(initialTheme);
-
-  // Bind toggle clicks
-  themeToggleBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme);
-    });
-  });
-
-  // Listen to OS theme changes if user hasn't explicitly set a preference
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('mywaterproofing_theme')) {
-      applyTheme(e.matches ? 'dark' : 'light');
-    }
-  });
+  try {
+    localStorage.removeItem('mywaterproofing_theme');
+  } catch (err) {}
+  document.documentElement.setAttribute('data-theme', 'light');
 
   // -------------------------------------------------------------------------
   // 12. LOCALITY CHIPS CLICK-GLOW INTERACTION
