@@ -514,7 +514,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-logo-img {
-  height: clamp(42px, 3.8vw, 48px);
+  height: clamp(48px, 4.4vw, 55px);
   width: auto;
   object-fit: contain;
   display: block;
@@ -3534,7 +3534,7 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(40px, 3.8vw, 48px) !important;
+  height: clamp(46px, 4.2vw, 54px) !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -3985,8 +3985,9 @@ body.menu-open {
   }
 
   .brand-logo-img {
-    height: 44px !important;
+    height: 48px !important;
     width: auto !important;
+    object-fit: contain !important;
   }
 
   .brand-name {
@@ -4122,7 +4123,7 @@ body.menu-open {
   }
 
   .site-footer .brand-logo-img {
-    height: 42px !important;
+    height: 46px !important;
     width: auto !important;
     object-fit: contain !important;
     margin: 0 auto !important;
