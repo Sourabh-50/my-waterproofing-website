@@ -3524,28 +3524,35 @@ body.menu-open {
 .site-footer .brand-logo-card {
   background: transparent !important;
   border: none !important;
+  outline: none !important;
   border-radius: 0 !important;
   padding: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
   box-shadow: none !important;
+  filter: none !important;
   backdrop-filter: none !important;
-  transition: opacity var(--transition-fast) !important;
 }
 
 .site-footer .brand-logo-card:hover {
   background: transparent !important;
   border: none !important;
+  outline: none !important;
   box-shadow: none !important;
-  opacity: 0.9;
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(48px, 4.4vw, 56px) !important;
+  height: clamp(48px, 4.4vw, 55px) !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  filter: none !important;
   transition: transform var(--transition-fast) !important;
 }
 
@@ -4164,7 +4171,7 @@ body.menu-open {
   }
 
   .site-footer .brand-logo-img {
-    height: 46px !important;
+    height: 48px !important;
     width: auto !important;
     object-fit: contain !important;
     margin: 0 auto !important;
