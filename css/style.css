@@ -510,7 +510,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .brand-logo:hover .brand-logo-card,
 .brand-logo:hover .brand-logo-img {
-  transform: translateY(-2px);
+  height: clamp(48px, 4.4vw, 56px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform var(--transition-fast);
 }
 
 .brand-logo-img {
@@ -3534,7 +3538,7 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(46px, 4.2vw, 54px) !important;
+  height: clamp(48px, 4.4vw, 56px) !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
