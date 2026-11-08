@@ -26,8 +26,7 @@
     <polygon points="424,95 361,250 424,250" fill="url(#favBlueGrad)" />
 
     <!-- 3. 'Y' Container -->
-    <polygon points="514,20 638,20 744,145 744,250 674,250 674,165 514,20" fill="#ffffff" />
-    <polygon points="974,20 850,20 744,145 744,250 814,250 814,165 974,20" fill="#ffffff" />
+    <polygon points="514,20 638,20 744,120 850,20 974,20 814,165 814,250 674,250 674,165" fill="#ffffff" />
     <polygon points="638,20 850,20 744,120" fill="url(#favBlueGrad)" />
     <polygon points="514,20 514,250 674,250 674,165" fill="url(#favBlueGrad)" />
     <polygon points="974,20 974,250 814,250 814,165" fill="url(#favBlueGrad)" />
