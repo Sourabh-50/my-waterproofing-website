@@ -3534,10 +3534,10 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(44px, 4vw, 52px) !important;
+  height: clamp(40px, 3.8vw, 48px) !important;
   width: auto !important;
+  object-fit: contain !important;
   display: block !important;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) !important;
   transition: transform var(--transition-fast) !important;
 }
 
@@ -4122,8 +4122,9 @@ body.menu-open {
   }
 
   .site-footer .brand-logo-img {
-    height: 48px !important;
+    height: 42px !important;
     width: auto !important;
+    object-fit: contain !important;
     margin: 0 auto !important;
   }
 
