@@ -92,6 +92,13 @@
   /* Transitions */
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --header-height: 78px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 62px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -105,10 +112,11 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height, 78px) + 16px);
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  color-scheme: dark;
-  background-color: #000000;
+  color-scheme: light dark;
+  background-color: var(--bg-light, #f8fafc);
   overflow-x: hidden;
   max-width: 100vw;
   width: 100%;
@@ -116,8 +124,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: #000000;
-  color: var(--text-dark);
+  background-color: var(--bg-light, #f8fafc);
+  color: var(--text-dark, #0f172a);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -125,6 +133,8 @@ body {
   max-width: 100vw;
   width: 100%;
   position: relative;
+  padding-top: var(--header-height, 78px);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 img, svg, video {
@@ -385,8 +395,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   background: #ffffff;
   backdrop-filter: blur(16px);
@@ -4753,7 +4766,7 @@ body.menu-open {
 
 /* Dark Theme Overrides for Why Choose & Mission */
 [data-theme="dark"] .why-choose-section {
-  background-color: transparent;
+  background-color: #0b0f19 !important;
 }
 
 [data-theme="dark"] .why-card {
@@ -4777,14 +4790,14 @@ body.menu-open {
 }
 
 [data-theme="dark"] .why-desc {
-  color: #94a3b8 !important;
+  color: #cbd5e1 !important;
 }
 
 [data-theme="dark"] .mission-callout-card {
-  background: rgba(17, 24, 39, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(17, 24, 39, 0.95) !important;
+  border: 1px solid rgba(62, 194, 211, 0.25) !important;
   border-left: 4px solid var(--brand-cyan, #3ec2d3) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45) !important;
 }
 
 [data-theme="dark"] .mission-callout-card .mission-tag {
@@ -4792,11 +4805,47 @@ body.menu-open {
 }
 
 [data-theme="dark"] .mission-callout-card .mission-quote {
-  color: #e2e8f0 !important;
+  color: #f8fafc !important;
 }
 
 [data-theme="dark"] .text-brand-blue {
   color: var(--brand-cyan, #3ec2d3) !important;
+}
+
+/* FAQ Item Theme Styles */
+.faq-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light, #e2e8f0) !important;
+  border-radius: 12px;
+  padding: 18px 22px;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item summary {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark, #0f172a);
+  cursor: pointer;
+}
+
+.faq-item p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+[data-theme="dark"] .faq-item {
+  background: #111827 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .faq-item summary {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .faq-item p {
+  color: #cbd5e1 !important;
 }
 
 

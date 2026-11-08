@@ -175,6 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Handle all Back to Top links smoothly
+  document.querySelectorAll('a[href="#top"], .back-to-top-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
   // -------------------------------------------------------------------------
   // 3. ACTIVE NAV HIGHLIGHTING VIA INTERSECTION OBSERVER
   // -------------------------------------------------------------------------
