@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="images/logo.png" alt="MY Waterproofing Pune Logo" width="180" />
+  <img src="images/logo.svg" alt="MY Waterproofing Pune Logo" width="220" />
 
   # MY Waterproofing Pune
   ### Waterproofing Specialist | Leakage Repair Experts • Pune, Maharashtra

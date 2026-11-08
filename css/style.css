@@ -412,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-/* Logo - Pure White Background Everywhere per User Rule */
+/* Logo - Clean, Unboxed Brand Logo without Any Outside Border/Box (User Direct Request) */
 .brand-logo {
   display: flex;
   align-items: center;
@@ -422,27 +422,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-logo-card {
-  background: #ffffff !important;
-  padding: 5px 12px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  border: none !important;
   transition: transform var(--transition-fast);
   flex-shrink: 0;
 }
 
-.brand-logo:hover .brand-logo-card {
+.brand-logo:hover .brand-logo-card,
+.brand-logo:hover .brand-logo-img {
   transform: translateY(-2px);
 }
 
 .brand-logo-img {
-  height: 50px;
+  height: clamp(46px, 4.2vw, 54px);
   width: auto;
   object-fit: contain;
   display: block;
+  transition: transform var(--transition-fast);
 }
 
 .brand-text {
@@ -1282,9 +1284,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #94a3b8 !important;
 }
 
-/* User Rule: Logo area must ALWAYS be white */
+/* Logo: Clean and transparent without outside border */
 .brand-logo-card {
-  background: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -3310,14 +3314,20 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-card {
-  background: #ffffff !important;
-  padding: 8px 16px !important;
-  border-radius: 12px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  justify-content: flex-start !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.site-footer .brand-logo-img {
+  height: clamp(56px, 5.2vw, 68px) !important;
+  width: auto !important;
+  display: block !important;
 }
 
 /* Footer Brand Column - Clean Non-Overlapping Architecture */
@@ -3369,11 +3379,12 @@ body.menu-open {
 }
 
 .modal-header .brand-logo-card {
-  background: #ffffff !important;
-  padding: 6px 12px !important;
-  border-radius: 8px !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   display: inline-flex !important;
-  border: 1px solid #e2e8f0 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .footer-top-grid {
@@ -3760,7 +3771,8 @@ body.menu-open {
   }
 
   .brand-logo-img {
-    height: 38px;
+    height: 44px !important;
+    width: auto !important;
   }
 
   .brand-name {
@@ -3894,7 +3906,7 @@ body.menu-open {
   }
 
   .site-footer .brand-logo-img {
-    height: 52px !important;
+    height: 60px !important;
     width: auto !important;
     margin: 0 auto !important;
   }
