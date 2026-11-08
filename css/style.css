@@ -1076,6 +1076,43 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--brand-blue, #144e73) !important;
 }
 
+/* Comparison Section Dark Navy Exception: High-Contrast White and Cyan */
+.comparison-section,
+[data-theme="light"] .comparison-section {
+  background: #0b1528 !important;
+  color: #ffffff !important;
+}
+
+.comparison-section .section-title,
+.comparison-section .title-white,
+[data-theme="light"] .comparison-section .section-title,
+[data-theme="light"] .comparison-section .title-white {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.comparison-section .text-gradient,
+[data-theme="light"] .comparison-section .text-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #3ec2d3 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #38bdf8 !important;
+}
+
+.comparison-section .section-desc,
+.comparison-section .desc-white,
+[data-theme="light"] .comparison-section .section-desc,
+[data-theme="light"] .comparison-section .desc-white {
+  color: #e2e8f0 !important;
+}
+
+.comparison-section .badge-dark,
+[data-theme="light"] .comparison-section .badge-dark {
+  background: rgba(56, 189, 248, 0.16) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
+
 [data-theme="light"] .services-section {
   background: #ffffff !important;
 }
@@ -3127,56 +3164,81 @@ body.menu-open {
 }
 
 .contact-card-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px 24px;
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  transition: background var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .contact-card-box:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(62, 194, 211, 0.4);
+  background: #ffffff;
+  border-color: var(--brand-blue, #144e73);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(20, 78, 115, 0.12);
 }
 
 .contact-icon-wrapper {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--brand-blue, #144e73);
-  color: white;
+  background: linear-gradient(135deg, #164688 0%, #1e3a8a 100%);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(22, 70, 136, 0.25);
 }
 
 .contact-icon-wrapper.whatsapp-icon {
-  background: var(--whatsapp-green);
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.contact-icon-wrapper.office-icon {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+}
+
+.contact-icon-wrapper.instagram-icon {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
 }
 
 .contact-box-title {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: white;
+  color: #0f172a;
+  margin-bottom: 2px;
 }
 
 .contact-box-val {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #fbbf24;
-  margin-top: 4px;
+  color: var(--brand-blue, #144e73);
+  margin-top: 2px;
+  margin-bottom: 4px;
   display: block;
 }
 
 .contact-box-sub {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+.contact-box-sub a {
+  color: var(--brand-blue, #144e73);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* Inspection Form Card */
@@ -3315,20 +3377,29 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-card {
-  background: transparent !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  padding: 8px 16px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  box-shadow: none !important;
-  border: none !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.site-footer .brand-logo-card:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.2) !important;
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(56px, 5.2vw, 68px) !important;
+  height: clamp(48px, 4.5vw, 56px) !important;
   width: auto !important;
   display: block !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) !important;
 }
 
 /* Footer Brand Column - Clean Non-Overlapping Architecture */
@@ -4667,9 +4738,149 @@ body.menu-open {
 
 .why-choose-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 36px;
+}
+
+@media (max-width: 992px) {
+  .why-choose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3-Pillar Straight Line Layout for About & Engineering Standards */
+.about-features-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+@media (max-width: 860px) {
+  .about-features-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-feature-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 26px 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast, 0.25s ease);
+}
+
+.about-feature-box:hover {
+  border-color: var(--brand-blue, #144e73);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(20, 78, 115, 0.12);
+}
+
+.about-feature-box-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(20, 78, 115, 0.08);
+  color: var(--brand-blue, #144e73);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.about-feature-box-title {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.about-feature-box-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Instagram Buttons & Live Showcase Card */
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.28) !important;
+  transition: all var(--transition-fast, 0.25s ease) !important;
+  text-decoration: none !important;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.45) !important;
+  color: #ffffff !important;
+}
+
+.instagram-showcase-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 36px);
+  margin-top: 44px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.instagram-showcase-content {
+  flex: 1 1 500px;
+}
+
+.instagram-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(225, 48, 108, 0.1);
+  color: #e1306c;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.instagram-showcase-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.instagram-showcase-desc {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.instagram-showcase-action {
+  flex-shrink: 0;
 }
 
 .why-card {
