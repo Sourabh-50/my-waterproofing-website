@@ -3377,29 +3377,35 @@ body.menu-open {
 }
 
 .site-footer .brand-logo-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  border-radius: 14px !important;
-  padding: 8px 16px !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
-  backdrop-filter: blur(8px) !important;
-  transition: all var(--transition-fast) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  transition: opacity var(--transition-fast) !important;
 }
 
 .site-footer .brand-logo-card:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(56, 189, 248, 0.4) !important;
-  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.2) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 0.9;
 }
 
 .site-footer .brand-logo-img {
-  height: clamp(48px, 4.5vw, 56px) !important;
+  height: clamp(52px, 5vw, 64px) !important;
   width: auto !important;
   display: block !important;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45)) !important;
+  transition: transform var(--transition-fast) !important;
+}
+
+.site-footer .brand-logo-card:hover .brand-logo-img {
+  transform: translateY(-2px);
 }
 
 /* Footer Brand Column - Clean Non-Overlapping Architecture */
