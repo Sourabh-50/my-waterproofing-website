@@ -3521,44 +3521,6 @@ body.menu-open {
   padding: 70px 0 30px;
 }
 
-.site-footer .brand-logo-card {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-}
-
-.site-footer .brand-logo-card:hover {
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-.site-footer .brand-logo-img {
-  height: clamp(48px, 4.4vw, 55px) !important;
-  width: auto !important;
-  object-fit: contain !important;
-  display: block !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-  transition: transform var(--transition-fast) !important;
-}
-
-.site-footer .brand-logo-card:hover .brand-logo-img {
-  transform: translateY(-2px);
-}
 
 /* Footer Brand Column - Clean Non-Overlapping Architecture */
 .footer-brand-col {
@@ -4170,12 +4132,6 @@ body.menu-open {
     text-align: center !important;
   }
 
-  .site-footer .brand-logo-img {
-    height: 48px !important;
-    width: auto !important;
-    object-fit: contain !important;
-    margin: 0 auto !important;
-  }
 
   .footer-brand-tagline {
     font-size: 0.78rem !important;
