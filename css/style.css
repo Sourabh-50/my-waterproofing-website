@@ -1352,8 +1352,21 @@ section[style*="navy-surface"] .text-gradient,
   color: #475569 !important;
 }
 
-[data-theme="light"] .contact-section {
+[data-theme="light"] .contact-section,
+.contact-section {
   background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .contact-section .section-title,
+.contact-section .section-title {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+[data-theme="light"] .contact-section .section-desc,
+.contact-section .section-desc {
+  color: #475569 !important;
 }
 
 [data-theme="light"] .contact-form-card {
@@ -3269,8 +3282,8 @@ body.menu-open {
    -------------------------------------------------------------------------- */
 .contact-section {
   padding: var(--section-padding) 0;
-  background: radial-gradient(circle at 10% 20%, #1c1917 0%, var(--primary-navy) 80%);
-  color: white;
+  background: #ffffff;
+  color: var(--text-dark, #0f172a);
   position: relative;
 }
 
