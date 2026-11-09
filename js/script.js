@@ -3,53 +3,80 @@
  * Fully interactive, glitch-free logic for Mobile, Tablet & Desktop
  */
 
+// Strict Single Theme Mode: Force Pure Clean Light Mode across all pages immediately
+try {
+  localStorage.removeItem('mywaterproofing_theme');
+} catch (e) {}
+document.documentElement.setAttribute('data-theme', 'light');
+
 document.addEventListener('DOMContentLoaded', () => {
   // -------------------------------------------------------------------------
-  // 1. MOBILE DRAWER NAVIGATION & ACCESSIBILITY
+  // 1. CENTERED MOBILE NAVIGATION POPUP & STRICT SCROLL LOCK
   // -------------------------------------------------------------------------
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+  const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+  const mobileNavCloseBtn = document.getElementById('mobileNavCloseBtn');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   let savedScrollY = 0;
+  let isMenuOpen = false;
 
   function lockBacksideScroll() {
     savedScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    document.documentElement.classList.add('menu-open');
+    document.body.classList.add('menu-open');
     document.body.style.position = 'fixed';
     document.body.style.top = `-${savedScrollY}px`;
     document.body.style.left = '0';
     document.body.style.right = '0';
     document.body.style.width = '100%';
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    isMenuOpen = true;
   }
 
-  function unlockBacksideScroll() {
+  function unlockBacksideScroll(targetElement = null) {
+    document.documentElement.classList.remove('menu-open');
+    document.body.classList.remove('menu-open');
     document.body.style.position = '';
     document.body.style.top = '';
     document.body.style.left = '';
     document.body.style.right = '';
     document.body.style.width = '';
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';
-    window.scrollTo(0, savedScrollY);
+    isMenuOpen = false;
+
+    if (targetElement) {
+      // Smoothly scroll to the requested section
+      const headerOffset = 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth'
+      });
+    } else {
+      window.scrollTo(0, savedScrollY);
+    }
   }
 
-  function toggleMobileMenu(forceClose = false) {
-    if (!hamburgerBtn || !mobileNavDrawer) return;
-    const isOpen = forceClose ? false : !mobileNavDrawer.classList.contains('open');
+  function toggleMobileMenu(forceClose = false, targetElement = null) {
+    if (!mobileNavDrawer) return;
+    const shouldOpen = forceClose ? false : !mobileNavDrawer.classList.contains('open');
 
-    if (isOpen) {
+    if (shouldOpen) {
       mobileNavDrawer.classList.add('open');
-      hamburgerBtn.classList.add('active');
-      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      if (hamburgerBtn) {
+        hamburgerBtn.classList.add('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+      }
       mobileNavDrawer.setAttribute('aria-hidden', 'false');
       lockBacksideScroll();
     } else {
       mobileNavDrawer.classList.remove('open');
-      hamburgerBtn.classList.remove('active');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      if (hamburgerBtn) {
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
       mobileNavDrawer.setAttribute('aria-hidden', 'true');
-      unlockBacksideScroll();
+      unlockBacksideScroll(targetElement);
     }
   }
 
@@ -60,16 +87,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  if (mobileNavCloseBtn) {
+    mobileNavCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu(true);
+    });
+  }
+
+  if (mobileNavBackdrop) {
+    mobileNavBackdrop.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileMenu(true);
+    });
+  }
+
+  // Prevent background touch scrolling on mobile
+  if (mobileNavDrawer) {
+    mobileNavDrawer.addEventListener('touchmove', (e) => {
+      const card = e.target.closest('.mobile-nav-card');
+      if (!card) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  }
+
   mobileNavLinks.forEach((link) => {
-    link.addEventListener('click', () => toggleMobileMenu(true));
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        const targetSection = document.querySelector(href);
+        if (targetSection) {
+          e.preventDefault();
+          toggleMobileMenu(true, targetSection);
+          return;
+        }
+      }
+      toggleMobileMenu(true);
+    });
   });
 
-  // Close when tapping outside the open drawer
+  // Close when tapping outside the card
   document.addEventListener('click', (e) => {
     if (
+      isMenuOpen &&
       mobileNavDrawer &&
       mobileNavDrawer.classList.contains('open') &&
-      !mobileNavDrawer.contains(e.target) &&
+      !e.target.closest('.mobile-nav-card') &&
       hamburgerBtn &&
       !hamburgerBtn.contains(e.target)
     ) {
@@ -77,9 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close on Escape
+  // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileNavDrawer && mobileNavDrawer.classList.contains('open')) {
+    if (e.key === 'Escape' && isMenuOpen) {
       toggleMobileMenu(true);
     }
   });
@@ -88,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. STICKY HEADER & SCROLL BEHAVIOR
   // -------------------------------------------------------------------------
   const siteHeader = document.querySelector('.site-header');
-  const backToTopBtn = document.getElementById('backToTopBtn');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
@@ -101,22 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
         siteHeader.classList.remove('scrolled');
       }
     }
-
-    // Back to top button visibility
-    if (backToTopBtn) {
-      if (scrollY > 500) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
-    }
   }, { passive: true });
 
-  if (backToTopBtn) {
-    backToTopBtn.addEventListener('click', () => {
+  // Handle all Back to Top links smoothly
+  document.querySelectorAll('a[href="#top"], .back-to-top-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }
+  });
 
   // -------------------------------------------------------------------------
   // 3. ACTIVE NAV HIGHLIGHTING VIA INTERSECTION OBSERVER
@@ -202,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Visible diagonal structural or shrinkage cracks on exterior facade',
       ],
       solution: 'Crack filling & coating with waterproofing compound to seal exterior cracks, stop rainwater percolation, and protect indoor walls.',
-      image: 'images/service-external-wall.jpg',
+      image: 'images/real-projects/real-site-external-wall-crack-filling.webp',
       serviceOption: 'External Wall Crack Filling & Waterproofing',
     },
     tank: {
@@ -363,11 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (selectedArea.includes('Balcony') || selectedArea.includes('Kitchen')) {
       approach = 'Non-Destructive Pressure Injection Grouting & Crack Filling with Waterproofing Compound';
       duration = '1 Day';
-    } else if (selectedArea.includes('Pool')) {
-      approach = 'Swimming Pool Hydrostatic Pressure Injection Grouting & Elastomeric Coating';
-      duration = '3 - 5 Days';
-    } else if (selectedArea.includes('Injection')) {
-      approach = 'Specialist High-Pressure Injection Grouting (100% Non-Destructive, Zero Tile Breaking)';
+    } else if (selectedArea.includes('Injection') || selectedArea.includes('Grouting')) {
+      approach = 'Specialist High-Pressure Injection Grouting & Concrete Crack Repair (100% Non-Destructive)';
       duration = '1 - 2 Days';
     }
 
@@ -613,6 +665,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const waUrl = `https://wa.me/919822278989?text=${waMsg}`;
 
+      // Asynchronous lead synchronization to Google Apps Script / Google Sheets backend
+      try {
+        const appsScriptUrl = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_APPS_SCRIPT_URL)
+          ? import.meta.env.VITE_APPS_SCRIPT_URL
+          : '';
+        if (appsScriptUrl) {
+          fetch(appsScriptUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: nameInput.value.trim(),
+              phone: phoneInput.value.trim(),
+              location: locationInput.value.trim(),
+              service: serviceInput.value,
+              email: emailInput && emailInput.value.trim() ? emailInput.value.trim() : '',
+              notes: descInput && descInput.value.trim() ? descInput.value.trim() : '',
+              timestamp: new Date().toISOString()
+            })
+          }).catch(() => {});
+        }
+      } catch (_) {}
+
       // Update button state
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
@@ -676,4 +751,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupFormHandling('mainContactForm', 'mainFormAlert');
   setupFormHandling('modalBookingForm', 'modalFormAlert');
+
+  // -------------------------------------------------------------------------
+  // 11. PERMANENT CLEAN LIGHT MODE (PURE LIGHT THEME)
+  // -------------------------------------------------------------------------
+  try {
+    localStorage.removeItem('mywaterproofing_theme');
+  } catch (err) {}
+  document.documentElement.setAttribute('data-theme', 'light');
+
+  // -------------------------------------------------------------------------
+  // 12. LOCALITY CHIPS CLICK-GLOW INTERACTION
+  // -------------------------------------------------------------------------
+  const localityChips = document.querySelectorAll('.locality-chip');
+  localityChips.forEach((chip) => {
+    chip.setAttribute('role', 'button');
+    chip.setAttribute('tabindex', '0');
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+    });
+    chip.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        chip.classList.toggle('active');
+      }
+    });
+  });
 });

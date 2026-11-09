@@ -1,13 +1,12 @@
 <div align="center">
 
-  <img src="images/logo.png" alt="MY Waterproofing Pune Logo" width="180" />
+  <img src="images/logo.svg" alt="MY Waterproofing Pune Logo" width="220" />
 
   # MY Waterproofing Pune
-  ### Leakage Solution Specialist • Serving Pune & PCMC Since 2010
+  ### Waterproofing Specialist | Leakage Repair Experts • Pune, Maharashtra
 
-  [![Website Status](https://img.shields.io/badge/Status-Live%20Production-success?style=for-the-badge&logo=vercel)](https://github.com/Sourabh-50/my-waterproofing-website)
-  [![Rating](https://img.shields.io/badge/Google%20Rating-4.9%20★-f59e0b?style=for-the-badge&logo=google)](https://github.com/Sourabh-50/my-waterproofing-website)
-  [![Projects](https://img.shields.io/badge/Projects-2%2C500%2B%20Completed-38bdf8?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
+  [![Website Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
+  [![Location](https://img.shields.io/badge/Location-Pune%2C%20Maharashtra-144e73?style=for-the-badge)](https://github.com/Sourabh-50/my-waterproofing-website)
   [![Vite](https://img.shields.io/badge/Bundler-Vite%208-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
 
   <p align="center">
@@ -44,7 +43,7 @@
 
 - **Multi-Page Static Architecture**:
   - `index.html` — Homepage featuring instant interactive diagnosis, before/after interactive image comparison slider, cost & timeline estimator, Pune customer reviews marquee stripe, and inspection booking modal.
-  - `about.html` — Company legacy, core milestones (2010–present), technical methodology, non-destructive philosophy, and certified engineer team.
+  - `about.html` — Company profile, core value pillars, technical methodology, non-destructive philosophy, and certified specialist team.
   - `gallery.html` — Real-world photographic case studies across Pune & PCMC societies (Amanora, Baner, Kothrud, Kharadi, Wakad, Viman Nagar).
   - `404.html` — Witty waterproofing-themed error page with custom animated dripping valve pipe and instant redirect to safety.
 - **Glassmorphic Dark Obsidian Design System**:
@@ -59,6 +58,16 @@
   - Google-indexed semantic HTML5 markup with OpenGraph, Twitter Cards, and schema.org microdata.
   - Valid `sitemap.xml` and `robots.txt` configuration.
   - Multi-resolution square favicon suite (`16x16`, `32x32`, `48x48`, `64x64`, `180x180`, `192x192`).
+
+---
+
+## 🛡️ Authenticity & Quality Standards
+
+1. **Removed Fake Metrics**: Eliminated invented claims like "Since 2010", "1,500+ projects", and "4.9 ★ rating".
+2. **Replaced Fake Reviews Marquee**: Replaced synthetic ratings with genuine Pune society case verifications, highlighting verified diagnostic procedures, specialized non-destructive treatment methods, and real on-site engineering results.
+3. **Strict Pune Geolocation**: Mention strictly Pune, Maharashtra, India without unverified street addresses or specific localities.
+4. **Preserved Verified Contact Data**: Retained approved official phone/WhatsApp (+91 9822278989) and official business emails (`info@mywaterproofing.in` and `santoshbelgaonkar@mywaterproofing.in`).
+5. **Scope Integrity**: Completely removed out-of-scope services (zero basement mentions) and aligned all 6 service specializations with authentic capabilities.
 
 ---
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,10 +25,10 @@
   <meta name="twitter:image" content="https://www.mywaterproofing.in/og-image.jpg?v=3" />
 
   <!-- Favicon Suite -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico?v=9" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon.png?v=9" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=9" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=9" />
 
   <!-- Google Fonts Preconnect & Inter / Outfit Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +38,7 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="page-404">
+<body class="page-404" id="top">
 
   <!-- =========================================================================
        HEADER
@@ -46,30 +46,33 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html#home" class="brand-logo" aria-label="MY Waterproofing Home">
-        <img src="images/logo.png" alt="MY Waterproofing Logo" class="brand-logo-img" width="112" height="46" />
+        <div class="brand-logo-card">
+          <img src="images/logo.svg" alt="MY Waterproofing Logo" class="brand-logo-img" width="144" height="63" />
+        </div>
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
         <a href="index.html#home" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About Us</a>
         <a href="index.html#services" class="nav-link">Our Services</a>
-        <a href="gallery.html" class="nav-link">Project Gallery</a>
-        <a href="index.html#estimator" class="nav-link">Cost Estimator</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="gallery.html" class="nav-link">Our Projects</a>
+        <a href="index.html#locations" class="nav-link">Service Areas</a>
+        <a href="index.html#contact" class="nav-link">Contact Us</a>
       </nav>
 
       <div class="header-actions">
         <a href="tel:+919822278989" class="header-call-btn desktop-only" title="Call directly">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <span>+91 9822278989</span>
+          <span>Call</span>
         </a>
-        <a href="index.html#contact" class="btn btn-primary btn-sm desktop-only">Book Inspection</a>
+        <a href="tel:+919822278989" class="btn btn-primary btn-sm desktop-only" title="Call to Book Inspection"><span>Book Inspection</span></a>
 
         <!-- Mobile Header Call Option near Hamburger -->
         <a href="tel:+919822278989" class="mobile-header-call-btn" title="Call Specialist" aria-label="Call +91 9822278989">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           <span>Call</span>
         </a>
+
 
         <!-- Mobile Hamburger Button -->
         <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
@@ -81,30 +84,21 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
-    <div class="mobile-nav-header">
-      <div class="brand-logo-card">
-        <img src="images/logo.png" alt="MY Waterproofing" class="brand-logo-img" />
-      </div>
-      <span>Pune & PCMC</span>
-    </div>
-    <div class="mobile-nav-links">
-      <a href="index.html#home" class="mobile-nav-link">Home <span>→</span></a>
-      <a href="about.html" class="mobile-nav-link">About Us <span>→</span></a>
-      <a href="index.html#services" class="mobile-nav-link">Our Services (8 Categories) <span>→</span></a>
-      <a href="index.html#repairs" class="mobile-nav-link">Specialized Repairs <span>→</span></a>
-      <a href="gallery.html" class="mobile-nav-link">Project Gallery <span>→</span></a>
-      <a href="index.html#estimator" class="mobile-nav-link">Cost Estimator <span>→</span></a>
-      <a href="index.html#contact" class="mobile-nav-link">Book Inspection <span>→</span></a>
-    </div>
-    <div class="mobile-drawer-footer">
-      <a href="tel:+919822278989" class="btn btn-secondary" style="width: 100%;">
-        📞 Call +91 9822278989
-      </a>
-      <a href="https://wa.me/919822278989?text=Hello%20MY%20Waterproofing%2C%20I%20would%20like%20to%20book%20a%20site%20inspection." target="_blank" rel="noopener" class="btn btn-whatsapp" style="width: 100%;">
-        💬 WhatsApp Support
-      </a>
+  <!-- Centered Mobile Navigation Popover Modal (No double rectangular header, centered options) -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    <div class="mobile-nav-card">
+      <button type="button" class="mobile-nav-close-btn" id="mobileNavCloseBtn" aria-label="Close Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation Links">
+        <a href="index.html#home" class="mobile-nav-link">Home</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="index.html#services" class="mobile-nav-link">Our Services</a>
+        <a href="gallery.html" class="mobile-nav-link">Our Projects</a>
+        <a href="index.html#locations" class="mobile-nav-link">Service Areas</a>
+        <a href="index.html#contact" class="mobile-nav-link">Contact Us</a>
+      </nav>
     </div>
   </div>
 
@@ -116,10 +110,10 @@
       <div class="error-hero-card">
         
         <!-- Leak Status Badge -->
-        <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 9999px; padding: 6px 18px; margin-bottom: 24px;">
-          <span style="display: inline-block; width: 9px; height: 9px; background: #ef4444; border-radius: 50%; box-shadow: 0 0 10px #ef4444; animation: pulse 1.8s infinite;"></span>
-          <span style="font-size: 0.82rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.09em;">
-            Waterproofing Alert • Major Leak Detected
+        <div style="display: inline-flex; align-items: center; gap: 10px; background: rgba(2, 132, 199, 0.1); border: 1px solid rgba(2, 132, 199, 0.3); border-radius: 9999px; padding: 6px 18px; margin-bottom: 24px;">
+          <span style="display: inline-block; width: 9px; height: 9px; background: #0284c7; border-radius: 50%; box-shadow: 0 0 10px #0284c7; animation: pulse 1.8s infinite;"></span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.09em;">
+            Waterproofing Alert • Page Not Found
           </span>
         </div>
 
@@ -200,25 +194,27 @@
     <div class="container">
       <div class="footer-top-grid">
         <!-- Col 1: Brand Info -->
-        <div>
-          <a href="index.html#home" class="brand-logo" style="margin-bottom: 16px;">
+        <div class="footer-brand-col">
+          <a href="index.html#home" class="brand-logo footer-brand-logo-link" aria-label="MY Waterproofing Home">
             <div class="brand-logo-card">
-              <img src="images/logo.png" alt="MY Waterproofing Pune Logo" class="brand-logo-img" width="118" height="48" style="height: 48px;" />
-            </div>
-            <div class="brand-text">
-              <span class="brand-name"><span>MY</span> Waterproofing</span>
-              <span class="brand-tagline">Leakage Solution Specialist</span>
+              <img src="images/logo-footer.png" alt="MY Waterproofing Logo" class="brand-logo-img" width="151" height="66" />
             </div>
           </a>
+          <div class="footer-brand-tagline">Waterproofing Specialist | Leakage Repair Experts</div>
           <p class="footer-brand-desc">
             We specialize in non-destructive pressure injection grouting with waterproofing compound and crack filling & coating across bathrooms, toilets, terraces, balconies, external walls, and water tanks.
           </p>
-          <div class="footer-brand-cta" style="display: flex; gap: 12px; align-items: center;">
+          <div class="footer-brand-cta" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
             <a href="https://wa.me/919822278989" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">
               WhatsApp Support
             </a>
-            <a href="tel:+919822278989" class="btn btn-secondary btn-sm">
-              Call Specialist
+            <a href="tel:+919822278989" class="btn btn-secondary btn-sm" title="Call Specialist">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>Call</span>
+            </a>
+            <a href="https://www.instagram.com/my.waterproofing?exln=dnNpcW03ZW9hZ293&utm_source=qr" target="_blank" rel="noopener" class="btn btn-instagram btn-sm" aria-label="Follow MY Waterproofing on Instagram">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram</span>
             </a>
           </div>
         </div>
@@ -227,12 +223,12 @@
         <div>
           <h4 class="footer-col-title">Core Services</h4>
           <ul class="footer-links-list">
-            <li><a href="index.html#services" class="footer-link">Pressure Injection Grouting</a></li>
-            <li><a href="index.html#services" class="footer-link">Bathroom & Toilet (No Tile Breaking)</a></li>
-            <li><a href="index.html#services" class="footer-link">Terrace & Roof Waterproofing</a></li>
+            <li><a href="index.html#services" class="footer-link">Bathroom and Toilet Waterproofing</a></li>
+            <li><a href="index.html#services" class="footer-link">Terrace and Roof Waterproofing</a></li>
             <li><a href="index.html#services" class="footer-link">External Wall Waterproofing</a></li>
-            <li><a href="index.html#services" class="footer-link">Kitchen & Balcony Waterproofing</a></li>
-            <li><a href="index.html#services" class="footer-link">Water Tank Waterproofing</a></li>
+            <li><a href="index.html#services" class="footer-link">Overhead Water Tank Waterproofing</a></li>
+            <li><a href="index.html#services" class="footer-link">Kitchen and Balcony Waterproofing</a></li>
+            <li><a href="index.html#services" class="footer-link">Pressure Injection Grouting & Crack Repair</a></li>
           </ul>
         </div>
 
@@ -242,12 +238,9 @@
           <ul class="footer-links-list">
             <li><a href="index.html#home" class="footer-link">Home</a></li>
             <li><a href="about.html" class="footer-link">About Our Company</a></li>
-            <li><a href="index.html#diagnosis" class="footer-link">Interactive Diagnosis</a></li>
-            <li><a href="index.html#comparison" class="footer-link">Before & After Slider</a></li>
             <li><a href="index.html#services" class="footer-link">Our Services</a></li>
-            <li><a href="index.html#repairs" class="footer-link">Specialized Repairs</a></li>
-            <li><a href="gallery.html" class="footer-link">Project Gallery (Real Cases)</a></li>
-            <li><a href="index.html#estimator" class="footer-link">Cost & Timeline Estimator</a></li>
+            <li><a href="gallery.html" class="footer-link">Project Gallery</a></li>
+            <li><a href="index.html#locations" class="footer-link">Service Areas</a></li>
             <li><a href="index.html#contact" class="footer-link">Book Free Site Visit</a></li>
           </ul>
         </div>
@@ -258,15 +251,18 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Pune, Maharashtra - 411028 (Serving All Pune & PCMC)</span>
+              <span>Pune, Maharashtra, India</span>
             </div>
             <div class="footer-contact-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #fbbf24;" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #38bdf8;" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               <a href="tel:+919822278989" style="color: white; font-weight: 700;">+91 9822278989</a>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:info@mywaterproofing.in" style="color: #38bdf8; font-weight: 600;">info@mywaterproofing.in</a>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div><a href="mailto:info@mywaterproofing.in" style="color: #3ec2d3; font-weight: 600;">info@mywaterproofing.in</a> <span style="font-size: 0.75rem; color: #94a3b8;">(Support & Quotes)</span></div>
+                <div><a href="mailto:santoshbelgaonkar@mywaterproofing.in" style="color: #3ec2d3; font-weight: 600;">santoshbelgaonkar@mywaterproofing.in</a> <span style="font-size: 0.75rem; color: #94a3b8;">(Owner Desk)</span></div>
+              </div>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -282,7 +278,7 @@
           © 2026 <strong>MY Waterproofing</strong>. All Rights Reserved. Pune, Maharashtra.
         </div>
         <div class="footer-legal-links">
-          <a href="index.html#home">Back to Top ↑</a>
+          <a href="#top" class="back-to-top-link">Back to Top ↑</a>
         </div>
       </div>
     </div>
@@ -299,12 +295,14 @@
     </svg>
   </a>
 
-  <!-- Back to Top Button -->
-  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="18 15 12 9 6 15"/>
+  <!-- Floating Instagram Action Button -->
+  <a href="https://www.instagram.com/my.waterproofing?exln=dnNpcW03ZW9hZ293&utm_source=qr" target="_blank" rel="noopener" class="floating-instagram-btn" aria-label="Follow MY Waterproofing on Instagram">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
     </svg>
-  </button>
+  </a>
 
   <!-- Core JavaScript -->
   <script type="module" src="js/script.js"></script>
